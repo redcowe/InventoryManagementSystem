@@ -31,8 +31,8 @@ namespace C968_Joshua_Cowell
         {
             this.btnModifyPartCancel = new System.Windows.Forms.Button();
             this.btnModifyPartSave = new System.Windows.Forms.Button();
-            this.txtModifyPartMachineID = new System.Windows.Forms.TextBox();
-            this.lblModifyPartMachineID = new System.Windows.Forms.Label();
+            this.txtModifyPartMachineIDCompanyName = new System.Windows.Forms.TextBox();
+            this.lblModifyPartMachineIDCompanyName = new System.Windows.Forms.Label();
             this.lblModifyPartMin = new System.Windows.Forms.Label();
             this.txtModifyPartMin = new System.Windows.Forms.TextBox();
             this.lblModifyPartMax = new System.Windows.Forms.Label();
@@ -69,23 +69,25 @@ namespace C968_Joshua_Cowell
             this.btnModifyPartSave.TabIndex = 36;
             this.btnModifyPartSave.Text = "Save";
             this.btnModifyPartSave.UseVisualStyleBackColor = true;
+            this.btnModifyPartSave.Click += new System.EventHandler(this.btnModifyPartSave_Click);
             // 
-            // txtModifyPartMachineID
+            // txtModifyPartMachineIDCompanyName
             // 
-            this.txtModifyPartMachineID.BackColor = System.Drawing.Color.LightCoral;
-            this.txtModifyPartMachineID.Location = new System.Drawing.Point(167, 284);
-            this.txtModifyPartMachineID.Name = "txtModifyPartMachineID";
-            this.txtModifyPartMachineID.Size = new System.Drawing.Size(108, 20);
-            this.txtModifyPartMachineID.TabIndex = 35;
+            this.txtModifyPartMachineIDCompanyName.BackColor = System.Drawing.Color.White;
+            this.txtModifyPartMachineIDCompanyName.Location = new System.Drawing.Point(167, 284);
+            this.txtModifyPartMachineIDCompanyName.Name = "txtModifyPartMachineIDCompanyName";
+            this.txtModifyPartMachineIDCompanyName.Size = new System.Drawing.Size(108, 20);
+            this.txtModifyPartMachineIDCompanyName.TabIndex = 35;
+            this.txtModifyPartMachineIDCompanyName.TextChanged += new System.EventHandler(this.txtModifyPartMachineIDCompanyName_TextChanged);
             // 
-            // lblModifyPartMachineID
+            // lblModifyPartMachineIDCompanyName
             // 
-            this.lblModifyPartMachineID.AutoSize = true;
-            this.lblModifyPartMachineID.Location = new System.Drawing.Point(73, 287);
-            this.lblModifyPartMachineID.Name = "lblModifyPartMachineID";
-            this.lblModifyPartMachineID.Size = new System.Drawing.Size(62, 13);
-            this.lblModifyPartMachineID.TabIndex = 34;
-            this.lblModifyPartMachineID.Text = "Machine ID";
+            this.lblModifyPartMachineIDCompanyName.AutoSize = true;
+            this.lblModifyPartMachineIDCompanyName.Location = new System.Drawing.Point(73, 287);
+            this.lblModifyPartMachineIDCompanyName.Name = "lblModifyPartMachineIDCompanyName";
+            this.lblModifyPartMachineIDCompanyName.Size = new System.Drawing.Size(62, 13);
+            this.lblModifyPartMachineIDCompanyName.TabIndex = 34;
+            this.lblModifyPartMachineIDCompanyName.Text = "Machine ID";
             // 
             // lblModifyPartMin
             // 
@@ -99,11 +101,12 @@ namespace C968_Joshua_Cowell
             // 
             // txtModifyPartMin
             // 
-            this.txtModifyPartMin.BackColor = System.Drawing.Color.LightCoral;
+            this.txtModifyPartMin.BackColor = System.Drawing.Color.White;
             this.txtModifyPartMin.Location = new System.Drawing.Point(225, 246);
             this.txtModifyPartMin.Name = "txtModifyPartMin";
             this.txtModifyPartMin.Size = new System.Drawing.Size(50, 20);
             this.txtModifyPartMin.TabIndex = 32;
+            this.txtModifyPartMin.TextChanged += new System.EventHandler(this.txtModifyPartMin_TextChanged);
             // 
             // lblModifyPartMax
             // 
@@ -117,11 +120,12 @@ namespace C968_Joshua_Cowell
             // 
             // txtModifyPartMax
             // 
-            this.txtModifyPartMax.BackColor = System.Drawing.Color.LightCoral;
+            this.txtModifyPartMax.BackColor = System.Drawing.Color.White;
             this.txtModifyPartMax.Location = new System.Drawing.Point(106, 246);
             this.txtModifyPartMax.Name = "txtModifyPartMax";
             this.txtModifyPartMax.Size = new System.Drawing.Size(50, 20);
             this.txtModifyPartMax.TabIndex = 30;
+            this.txtModifyPartMax.TextChanged += new System.EventHandler(this.txtModifyPartMax_TextChanged);
             // 
             // lblModifyPartPriceCost
             // 
@@ -135,7 +139,7 @@ namespace C968_Joshua_Cowell
             // 
             // txtModifyPartPriceCost
             // 
-            this.txtModifyPartPriceCost.BackColor = System.Drawing.Color.LightCoral;
+            this.txtModifyPartPriceCost.BackColor = System.Drawing.Color.White;
             this.txtModifyPartPriceCost.Location = new System.Drawing.Point(167, 202);
             this.txtModifyPartPriceCost.Name = "txtModifyPartPriceCost";
             this.txtModifyPartPriceCost.Size = new System.Drawing.Size(108, 20);
@@ -154,11 +158,12 @@ namespace C968_Joshua_Cowell
             // 
             // txtModifyPartInventory
             // 
-            this.txtModifyPartInventory.BackColor = System.Drawing.Color.LightCoral;
+            this.txtModifyPartInventory.BackColor = System.Drawing.Color.White;
             this.txtModifyPartInventory.Location = new System.Drawing.Point(167, 158);
             this.txtModifyPartInventory.Name = "txtModifyPartInventory";
             this.txtModifyPartInventory.Size = new System.Drawing.Size(108, 20);
             this.txtModifyPartInventory.TabIndex = 26;
+            this.txtModifyPartInventory.TextChanged += new System.EventHandler(this.txtModifyPartInventory_TextChanged);
             // 
             // lblModifyPartName
             // 
@@ -172,11 +177,12 @@ namespace C968_Joshua_Cowell
             // 
             // txtModifyPartName
             // 
-            this.txtModifyPartName.BackColor = System.Drawing.Color.LightCoral;
+            this.txtModifyPartName.BackColor = System.Drawing.Color.White;
             this.txtModifyPartName.Location = new System.Drawing.Point(167, 114);
             this.txtModifyPartName.Name = "txtModifyPartName";
             this.txtModifyPartName.Size = new System.Drawing.Size(108, 20);
             this.txtModifyPartName.TabIndex = 24;
+            this.txtModifyPartName.TextChanged += new System.EventHandler(this.txtModifyPartName_TextChanged);
             // 
             // lbModifylPartID
             // 
@@ -215,6 +221,7 @@ namespace C968_Joshua_Cowell
             this.rdbtnModifyPartsOutsourced.TabIndex = 20;
             this.rdbtnModifyPartsOutsourced.Text = "Outsourced";
             this.rdbtnModifyPartsOutsourced.UseVisualStyleBackColor = true;
+            this.rdbtnModifyPartsOutsourced.CheckedChanged += new System.EventHandler(this.rdbtnModifyPartsOutsourced_CheckedChanged);
             // 
             // rdbtnModifyPartsInHouse
             // 
@@ -228,6 +235,7 @@ namespace C968_Joshua_Cowell
             this.rdbtnModifyPartsInHouse.TabStop = true;
             this.rdbtnModifyPartsInHouse.Text = "In-House";
             this.rdbtnModifyPartsInHouse.UseVisualStyleBackColor = true;
+            this.rdbtnModifyPartsInHouse.CheckedChanged += new System.EventHandler(this.rdbtnModifyPartsInHouse_CheckedChanged);
             // 
             // ModifyPart
             // 
@@ -236,8 +244,8 @@ namespace C968_Joshua_Cowell
             this.ClientSize = new System.Drawing.Size(334, 377);
             this.Controls.Add(this.btnModifyPartCancel);
             this.Controls.Add(this.btnModifyPartSave);
-            this.Controls.Add(this.txtModifyPartMachineID);
-            this.Controls.Add(this.lblModifyPartMachineID);
+            this.Controls.Add(this.txtModifyPartMachineIDCompanyName);
+            this.Controls.Add(this.lblModifyPartMachineIDCompanyName);
             this.Controls.Add(this.lblModifyPartMin);
             this.Controls.Add(this.txtModifyPartMin);
             this.Controls.Add(this.lblModifyPartMax);
@@ -265,8 +273,8 @@ namespace C968_Joshua_Cowell
 
         private System.Windows.Forms.Button btnModifyPartCancel;
         private System.Windows.Forms.Button btnModifyPartSave;
-        private System.Windows.Forms.TextBox txtModifyPartMachineID;
-        private System.Windows.Forms.Label lblModifyPartMachineID;
+        private System.Windows.Forms.TextBox txtModifyPartMachineIDCompanyName;
+        private System.Windows.Forms.Label lblModifyPartMachineIDCompanyName;
         private System.Windows.Forms.Label lblModifyPartMin;
         private System.Windows.Forms.TextBox txtModifyPartMin;
         private System.Windows.Forms.Label lblModifyPartMax;

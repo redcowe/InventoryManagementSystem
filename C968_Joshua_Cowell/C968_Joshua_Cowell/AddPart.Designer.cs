@@ -44,8 +44,8 @@ namespace C968_Joshua_Cowell
             this.txtPartMax = new System.Windows.Forms.TextBox();
             this.txtPartMin = new System.Windows.Forms.TextBox();
             this.lblPartMin = new System.Windows.Forms.Label();
-            this.lblPartMachineID = new System.Windows.Forms.Label();
-            this.txtPartMachineID = new System.Windows.Forms.TextBox();
+            this.lblPartMachineIDCompanyName = new System.Windows.Forms.Label();
+            this.txtPartMachineIDCompanyName = new System.Windows.Forms.TextBox();
             this.btnPartSave = new System.Windows.Forms.Button();
             this.btnPartCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -92,6 +92,7 @@ namespace C968_Joshua_Cowell
             this.txtPartID.ReadOnly = true;
             this.txtPartID.Size = new System.Drawing.Size(108, 20);
             this.txtPartID.TabIndex = 3;
+            this.txtPartID.TextChanged += new System.EventHandler(this.txtPartID_TextChanged);
             // 
             // lblPartID
             // 
@@ -139,6 +140,7 @@ namespace C968_Joshua_Cowell
             this.txtPartInventory.Name = "txtPartInventory";
             this.txtPartInventory.Size = new System.Drawing.Size(108, 20);
             this.txtPartInventory.TabIndex = 7;
+            this.txtPartInventory.TextChanged += new System.EventHandler(this.txtPartInventory_TextChanged);
             // 
             // lblPartPriceCost
             // 
@@ -157,6 +159,7 @@ namespace C968_Joshua_Cowell
             this.txtPartPriceCost.Name = "txtPartPriceCost";
             this.txtPartPriceCost.Size = new System.Drawing.Size(108, 20);
             this.txtPartPriceCost.TabIndex = 9;
+            this.txtPartPriceCost.TextChanged += new System.EventHandler(this.txtPartPriceCost_TextChanged);
             // 
             // lblPartMax
             // 
@@ -175,6 +178,7 @@ namespace C968_Joshua_Cowell
             this.txtPartMax.Name = "txtPartMax";
             this.txtPartMax.Size = new System.Drawing.Size(50, 20);
             this.txtPartMax.TabIndex = 11;
+            this.txtPartMax.TextChanged += new System.EventHandler(this.txtPartMax_TextChanged);
             // 
             // txtPartMin
             // 
@@ -183,6 +187,7 @@ namespace C968_Joshua_Cowell
             this.txtPartMin.Name = "txtPartMin";
             this.txtPartMin.Size = new System.Drawing.Size(50, 20);
             this.txtPartMin.TabIndex = 13;
+            this.txtPartMin.TextChanged += new System.EventHandler(this.txtPartMin_TextChanged);
             // 
             // lblPartMin
             // 
@@ -194,22 +199,23 @@ namespace C968_Joshua_Cowell
             this.lblPartMin.Text = "Min";
             this.lblPartMin.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lblPartMachineID
+            // lblPartMachineIDCompanyName
             // 
-            this.lblPartMachineID.AutoSize = true;
-            this.lblPartMachineID.Location = new System.Drawing.Point(73, 287);
-            this.lblPartMachineID.Name = "lblPartMachineID";
-            this.lblPartMachineID.Size = new System.Drawing.Size(62, 13);
-            this.lblPartMachineID.TabIndex = 15;
-            this.lblPartMachineID.Text = "Machine ID";
+            this.lblPartMachineIDCompanyName.AutoSize = true;
+            this.lblPartMachineIDCompanyName.Location = new System.Drawing.Point(73, 287);
+            this.lblPartMachineIDCompanyName.Name = "lblPartMachineIDCompanyName";
+            this.lblPartMachineIDCompanyName.Size = new System.Drawing.Size(62, 13);
+            this.lblPartMachineIDCompanyName.TabIndex = 15;
+            this.lblPartMachineIDCompanyName.Text = "Machine ID";
             // 
-            // txtPartMachineID
+            // txtPartMachineIDCompanyName
             // 
-            this.txtPartMachineID.BackColor = System.Drawing.Color.LightCoral;
-            this.txtPartMachineID.Location = new System.Drawing.Point(167, 284);
-            this.txtPartMachineID.Name = "txtPartMachineID";
-            this.txtPartMachineID.Size = new System.Drawing.Size(108, 20);
-            this.txtPartMachineID.TabIndex = 16;
+            this.txtPartMachineIDCompanyName.BackColor = System.Drawing.Color.LightCoral;
+            this.txtPartMachineIDCompanyName.Location = new System.Drawing.Point(167, 284);
+            this.txtPartMachineIDCompanyName.Name = "txtPartMachineIDCompanyName";
+            this.txtPartMachineIDCompanyName.Size = new System.Drawing.Size(108, 20);
+            this.txtPartMachineIDCompanyName.TabIndex = 16;
+            this.txtPartMachineIDCompanyName.TextChanged += new System.EventHandler(this.txtPartMachineIDCompanyName_TextChanged);
             // 
             // btnPartSave
             // 
@@ -220,6 +226,7 @@ namespace C968_Joshua_Cowell
             this.btnPartSave.TabIndex = 17;
             this.btnPartSave.Text = "Save";
             this.btnPartSave.UseVisualStyleBackColor = true;
+            this.btnPartSave.Click += new System.EventHandler(this.btnPartSave_Click);
             // 
             // btnPartCancel
             // 
@@ -238,8 +245,8 @@ namespace C968_Joshua_Cowell
             this.ClientSize = new System.Drawing.Size(334, 377);
             this.Controls.Add(this.btnPartCancel);
             this.Controls.Add(this.btnPartSave);
-            this.Controls.Add(this.txtPartMachineID);
-            this.Controls.Add(this.lblPartMachineID);
+            this.Controls.Add(this.txtPartMachineIDCompanyName);
+            this.Controls.Add(this.lblPartMachineIDCompanyName);
             this.Controls.Add(this.lblPartMin);
             this.Controls.Add(this.txtPartMin);
             this.Controls.Add(this.lblPartMax);
@@ -256,7 +263,7 @@ namespace C968_Joshua_Cowell
             this.Controls.Add(this.rdbtnPartsOutsourced);
             this.Controls.Add(this.rdbtnPartsInHouse);
             this.Name = "AddPart";
-            this.Text = "Parts";
+            this.Text = "Part";
             this.Load += new System.EventHandler(this.Parts_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,8 +287,8 @@ namespace C968_Joshua_Cowell
         private System.Windows.Forms.TextBox txtPartMax;
         private System.Windows.Forms.TextBox txtPartMin;
         private System.Windows.Forms.Label lblPartMin;
-        private System.Windows.Forms.Label lblPartMachineID;
-        private System.Windows.Forms.TextBox txtPartMachineID;
+        private System.Windows.Forms.Label lblPartMachineIDCompanyName;
+        private System.Windows.Forms.TextBox txtPartMachineIDCompanyName;
         private System.Windows.Forms.Button btnPartSave;
         private System.Windows.Forms.Button btnPartCancel;
     }

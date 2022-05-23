@@ -29,19 +29,37 @@ namespace C968_Joshua_Cowell
 
         public int Max { get; set; }
 
-        public void addAssociatedPart(Part part) 
+
+        public void addAssociatedPart(Part part)
         {
-            //TODO
+            AssociatedParts.Add(part);
         }
-        
-        public void removeAssociatedPart(int id)
+        public bool removeAssociatedPart(int id)
         {
-            //TODO
+            for (int i = 0; i < AssociatedParts.Count; i++)
+            {
+                if (AssociatedParts[i].PartID == id)
+                {
+                    AssociatedParts.Remove(AssociatedParts[i]);
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public void lookupAssociatedPart(int id)
+        public Part lookupAssociatedPart(int id)
         {
-            //TODO
+            Part result = null;
+            for (int i = 0; i < AssociatedParts.Count; i++)
+            {
+                if (AssociatedParts[i].PartID == id)
+                {
+                    _ = AssociatedParts[i];
+
+                }
+            }
+            return result;
         }
+
     }
 }

@@ -4,25 +4,25 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace C968_Joshua_Cowell
 {
-     public class Inventory
+     public static class Inventory
 
-    //Parts and Products Lists
+    //Parts and Products Lists and properties
     {
-        private BindingList<Product> products = new BindingList<Product>();
+        static private  BindingList<Product> products = new BindingList<Product>();
 
-        public BindingList<Product> Products
+        static public BindingList<Product> Products
         {
             set { products = value; }
             get { return products; }
         }
 
+        static private  BindingList<Part> parts = new BindingList<Part>();
 
-        private BindingList<Part> parts = new BindingList<Part>();
-
-        public BindingList<Part> AllParts
+        public static BindingList<Part> AllParts
         {
             set { parts = value; }
             get { return parts; }
@@ -32,13 +32,13 @@ namespace C968_Joshua_Cowell
 
         //Product functions
 
-        public void addProduct(Product product)
+        public static void addProduct(Product product)
         {
-            //TODO
+            Inventory.Products.Add(product);
         }
 
      
-        public bool removeProduct(int id)
+        public static bool removeProduct(int id)
         {
             if (Products.Contains(Products[id]))
             {
@@ -51,31 +51,44 @@ namespace C968_Joshua_Cowell
             }
 
         }
-        /*
+        
 
-        public Product lookupProduct(int id)
+        public static Product lookupProduct(int id)
         {
-            //TODO
-
-           
+            Product product = null;
+            for (int i = 0; i < Inventory.Products.Count; i++)
+            {
+                if (id == Inventory.Products[i].ProductID)
+                {
+                    _ = Inventory.products[i];
+                }
+            }
+            return product;
         }
 
-        */
+        
       
 
-        public void updateProduct( int id, Product product)
+        public static void updateProduct( int id, Product product)
         {
-            //TODO
+            for (int i = 0; i < Inventory.Products.Count; i++)
+            {
+                if (id == Inventory.Products[i].ProductID)
+                {
+                    removeProduct(id);
+                }
+                addProduct(product);
+            }
         }
 
         //Part functions
 
-        public void addPart(Part part)
+        public static void addPart(Part part)
         {
-            //TODO
+            Inventory.AllParts.Add(part);
         }
 
-        public bool removePart(Part part)
+        public static bool removePart(Part part)
         {
             if (AllParts.Contains(part))
             {
@@ -88,18 +101,61 @@ namespace C968_Joshua_Cowell
             }
         }
 
-        /*
-        public Part lookupPart(int id)
+        
+        public static Part lookupPart(int id)
         {
-            //TODO
+            Part part = null;
+            for (int i = 0; i < Inventory.AllParts.Count; i++)
+            {
+                if (id == Inventory.AllParts[i].PartID)
+                {
+                    _ = Inventory.AllParts[i];
+                }
+            }
+            return part;
+            
         }
-        */
+        
 
-        public void updatePart(int id, Part part)
+        public static void updatePart(int id, Part part)
         {
-            //TODO
+            for (int i = 0; i < Inventory.AllParts.Count; i++)
+            {
+                if (id == Inventory.AllParts[i].PartID)
+                {
+                    removePart(Inventory.AllParts[i]);
+                }
+                addPart(part);
+            }
         }
 
+        //Helper functions to caculate IDs
+        public static int calculatePartID()
+        {
+            
+            int result = Inventory.AllParts.Count + 1;
+            for (int i = 0; i < Inventory.AllParts.Count; i++)
+            {
+                if (result == Inventory.AllParts[i].PartID)
+                {
+                    result = Inventory.AllParts.Count + 2;
+                }
+            }
+            return result;
+        }
+
+        public static int calculateProdID()
+        {
+            int result = Inventory.Products.Count + 1;
+            for (int i = 0; i < Inventory.Products.Count; i++)
+            {
+                if (result == Inventory.Products[i].ProductID)
+                {
+                    result = Inventory.Products.Count + 2;
+                }
+            }
+            return result;
+        }
     }
 }
 

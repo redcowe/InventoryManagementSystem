@@ -43,19 +43,7 @@ namespace C968_Joshua_Cowell
             this.txtProductMin = new System.Windows.Forms.TextBox();
             this.lblProductMax = new System.Windows.Forms.Label();
             this.dataviewAddProductCandidate = new System.Windows.Forms.DataGridView();
-            this.columnAddProductPartID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnsAddProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddProductInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddProductMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAddProductMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataviewAssociatedParts = new System.Windows.Forms.DataGridView();
-            this.columnAssociatedAddProductPartID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAssociatedAddProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAssociatedAddProductInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAssociatedAddProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAssociatedAddProductMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnAssociatedAddProductMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAssociated = new System.Windows.Forms.Label();
             this.lblAllParts = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -84,6 +72,7 @@ namespace C968_Joshua_Cowell
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(118, 20);
             this.txtProductID.TabIndex = 1;
+            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
             // 
             // lblProductID
             // 
@@ -111,6 +100,7 @@ namespace C968_Joshua_Cowell
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(118, 20);
             this.txtProductName.TabIndex = 3;
+            this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
             // lblProductInventory
             // 
@@ -128,6 +118,7 @@ namespace C968_Joshua_Cowell
             this.txtProductInventory.Name = "txtProductInventory";
             this.txtProductInventory.Size = new System.Drawing.Size(118, 20);
             this.txtProductInventory.TabIndex = 5;
+            this.txtProductInventory.TextChanged += new System.EventHandler(this.txtProductInventory_TextChanged);
             // 
             // lblProductPrice
             // 
@@ -145,6 +136,7 @@ namespace C968_Joshua_Cowell
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(118, 20);
             this.txtProductPrice.TabIndex = 7;
+            this.txtProductPrice.TextChanged += new System.EventHandler(this.txtProductPrice_TextChanged);
             // 
             // lblProductMin
             // 
@@ -162,6 +154,7 @@ namespace C968_Joshua_Cowell
             this.txtProductMax.Name = "txtProductMax";
             this.txtProductMax.Size = new System.Drawing.Size(41, 20);
             this.txtProductMax.TabIndex = 11;
+            this.txtProductMax.TextChanged += new System.EventHandler(this.txtProductMax_TextChanged);
             // 
             // txtProductMin
             // 
@@ -170,6 +163,7 @@ namespace C968_Joshua_Cowell
             this.txtProductMin.Name = "txtProductMin";
             this.txtProductMin.Size = new System.Drawing.Size(41, 20);
             this.txtProductMin.TabIndex = 12;
+            this.txtProductMin.TextChanged += new System.EventHandler(this.txtProductMin_TextChanged);
             // 
             // lblProductMax
             // 
@@ -182,127 +176,36 @@ namespace C968_Joshua_Cowell
             // 
             // dataviewAddProductCandidate
             // 
+            this.dataviewAddProductCandidate.AllowUserToAddRows = false;
+            this.dataviewAddProductCandidate.AllowUserToDeleteRows = false;
+            this.dataviewAddProductCandidate.AllowUserToResizeColumns = false;
+            this.dataviewAddProductCandidate.AllowUserToResizeRows = false;
             this.dataviewAddProductCandidate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataviewAddProductCandidate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnAddProductPartID,
-            this.columnsAddProductName,
-            this.columnAddProductInventory,
-            this.columnAddProductPrice,
-            this.columnAddProductMin,
-            this.columnAddProductMax});
             this.dataviewAddProductCandidate.Location = new System.Drawing.Point(288, 70);
+            this.dataviewAddProductCandidate.MultiSelect = false;
             this.dataviewAddProductCandidate.Name = "dataviewAddProductCandidate";
+            this.dataviewAddProductCandidate.ReadOnly = true;
             this.dataviewAddProductCandidate.RowHeadersVisible = false;
+            this.dataviewAddProductCandidate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataviewAddProductCandidate.Size = new System.Drawing.Size(500, 162);
             this.dataviewAddProductCandidate.TabIndex = 16;
-            // 
-            // columnAddProductPartID
-            // 
-            this.columnAddProductPartID.Frozen = true;
-            this.columnAddProductPartID.HeaderText = "Part ID";
-            this.columnAddProductPartID.Name = "columnAddProductPartID";
-            this.columnAddProductPartID.ReadOnly = true;
-            // 
-            // columnsAddProductName
-            // 
-            this.columnsAddProductName.Frozen = true;
-            this.columnsAddProductName.HeaderText = "Name";
-            this.columnsAddProductName.Name = "columnsAddProductName";
-            this.columnsAddProductName.ReadOnly = true;
-            // 
-            // columnAddProductInventory
-            // 
-            this.columnAddProductInventory.Frozen = true;
-            this.columnAddProductInventory.HeaderText = "Inventory";
-            this.columnAddProductInventory.Name = "columnAddProductInventory";
-            this.columnAddProductInventory.ReadOnly = true;
-            // 
-            // columnAddProductPrice
-            // 
-            this.columnAddProductPrice.Frozen = true;
-            this.columnAddProductPrice.HeaderText = "Price";
-            this.columnAddProductPrice.Name = "columnAddProductPrice";
-            this.columnAddProductPrice.ReadOnly = true;
-            // 
-            // columnAddProductMin
-            // 
-            this.columnAddProductMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnAddProductMin.Frozen = true;
-            this.columnAddProductMin.HeaderText = "Min";
-            this.columnAddProductMin.Name = "columnAddProductMin";
-            this.columnAddProductMin.ReadOnly = true;
-            this.columnAddProductMin.Width = 49;
-            // 
-            // columnAddProductMax
-            // 
-            this.columnAddProductMax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnAddProductMax.Frozen = true;
-            this.columnAddProductMax.HeaderText = "Max";
-            this.columnAddProductMax.Name = "columnAddProductMax";
-            this.columnAddProductMax.ReadOnly = true;
-            this.columnAddProductMax.Width = 52;
+            this.dataviewAddProductCandidate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataviewAddProductCandidate_CellContentClick);
             // 
             // dataviewAssociatedParts
             // 
+            this.dataviewAssociatedParts.AllowUserToAddRows = false;
+            this.dataviewAssociatedParts.AllowUserToDeleteRows = false;
+            this.dataviewAssociatedParts.AllowUserToResizeColumns = false;
+            this.dataviewAssociatedParts.AllowUserToResizeRows = false;
             this.dataviewAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataviewAssociatedParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnAssociatedAddProductPartID,
-            this.columnAssociatedAddProductName,
-            this.columnAssociatedAddProductInventory,
-            this.columnAssociatedAddProductPrice,
-            this.columnAssociatedAddProductMin,
-            this.columnAssociatedAddProductMax});
             this.dataviewAssociatedParts.Location = new System.Drawing.Point(288, 277);
+            this.dataviewAssociatedParts.MultiSelect = false;
             this.dataviewAssociatedParts.Name = "dataviewAssociatedParts";
+            this.dataviewAssociatedParts.ReadOnly = true;
             this.dataviewAssociatedParts.RowHeadersVisible = false;
+            this.dataviewAssociatedParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataviewAssociatedParts.Size = new System.Drawing.Size(500, 162);
             this.dataviewAssociatedParts.TabIndex = 17;
-            // 
-            // columnAssociatedAddProductPartID
-            // 
-            this.columnAssociatedAddProductPartID.Frozen = true;
-            this.columnAssociatedAddProductPartID.HeaderText = "Part ID";
-            this.columnAssociatedAddProductPartID.Name = "columnAssociatedAddProductPartID";
-            this.columnAssociatedAddProductPartID.ReadOnly = true;
-            // 
-            // columnAssociatedAddProductName
-            // 
-            this.columnAssociatedAddProductName.Frozen = true;
-            this.columnAssociatedAddProductName.HeaderText = "Name";
-            this.columnAssociatedAddProductName.Name = "columnAssociatedAddProductName";
-            this.columnAssociatedAddProductName.ReadOnly = true;
-            // 
-            // columnAssociatedAddProductInventory
-            // 
-            this.columnAssociatedAddProductInventory.Frozen = true;
-            this.columnAssociatedAddProductInventory.HeaderText = "Inventory";
-            this.columnAssociatedAddProductInventory.Name = "columnAssociatedAddProductInventory";
-            this.columnAssociatedAddProductInventory.ReadOnly = true;
-            // 
-            // columnAssociatedAddProductPrice
-            // 
-            this.columnAssociatedAddProductPrice.Frozen = true;
-            this.columnAssociatedAddProductPrice.HeaderText = "Price";
-            this.columnAssociatedAddProductPrice.Name = "columnAssociatedAddProductPrice";
-            this.columnAssociatedAddProductPrice.ReadOnly = true;
-            // 
-            // columnAssociatedAddProductMin
-            // 
-            this.columnAssociatedAddProductMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnAssociatedAddProductMin.Frozen = true;
-            this.columnAssociatedAddProductMin.HeaderText = "Min";
-            this.columnAssociatedAddProductMin.Name = "columnAssociatedAddProductMin";
-            this.columnAssociatedAddProductMin.ReadOnly = true;
-            this.columnAssociatedAddProductMin.Width = 49;
-            // 
-            // columnAssociatedAddProductMax
-            // 
-            this.columnAssociatedAddProductMax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnAssociatedAddProductMax.Frozen = true;
-            this.columnAssociatedAddProductMax.HeaderText = "Max";
-            this.columnAssociatedAddProductMax.Name = "columnAssociatedAddProductMax";
-            this.columnAssociatedAddProductMax.ReadOnly = true;
-            this.columnAssociatedAddProductMax.Width = 52;
             // 
             // lblAssociated
             // 
@@ -365,10 +268,11 @@ namespace C968_Joshua_Cowell
             // 
             // txtAddProductSearch
             // 
-            this.txtAddProductSearch.Location = new System.Drawing.Point(623, 32);
+            this.txtAddProductSearch.Location = new System.Drawing.Point(623, 34);
             this.txtAddProductSearch.Name = "txtAddProductSearch";
             this.txtAddProductSearch.Size = new System.Drawing.Size(165, 20);
             this.txtAddProductSearch.TabIndex = 24;
+            this.txtAddProductSearch.TextChanged += new System.EventHandler(this.txtAddProductSearch_TextChanged);
             // 
             // btnAddProductSearch
             // 
@@ -378,6 +282,7 @@ namespace C968_Joshua_Cowell
             this.btnAddProductSearch.TabIndex = 25;
             this.btnAddProductSearch.Text = "Search";
             this.btnAddProductSearch.UseVisualStyleBackColor = true;
+            this.btnAddProductSearch.Click += new System.EventHandler(this.btnAddProductSearch_Click);
             // 
             // AddProduct
             // 
@@ -409,6 +314,7 @@ namespace C968_Joshua_Cowell
             this.Controls.Add(this.lblProductTitle);
             this.Name = "AddProduct";
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.AddProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataviewAddProductCandidate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewAssociatedParts)).EndInit();
             this.ResumeLayout(false);
@@ -441,17 +347,5 @@ namespace C968_Joshua_Cowell
         private System.Windows.Forms.Button btnAddProductSave;
         private System.Windows.Forms.TextBox txtAddProductSearch;
         private System.Windows.Forms.Button btnAddProductSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddProductPartID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnsAddProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddProductInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddProductPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddProductMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAddProductMax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAssociatedAddProductPartID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAssociatedAddProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAssociatedAddProductInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAssociatedAddProductPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAssociatedAddProductMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnAssociatedAddProductMax;
     }
 }

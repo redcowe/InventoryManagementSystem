@@ -43,24 +43,14 @@ namespace C968_Joshua_Cowell
             this.btnSearchParts = new System.Windows.Forms.Button();
             this.btnSearchProducts = new System.Windows.Forms.Button();
             this.dataviewParts = new System.Windows.Forms.DataGridView();
-            this.columnPartsPartId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPartsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPartsInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPartsPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPartsMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPartsMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataviewProducts = new System.Windows.Forms.DataGridView();
-            this.columnProductsProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnsProductsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnProductsInventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnProductsPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnProductsMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnProductsMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.inventoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.inventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataviewParts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +66,7 @@ namespace C968_Joshua_Cowell
             // 
             // btnModifyParts
             // 
-            this.btnModifyParts.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnModifyParts.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnModifyParts.Location = new System.Drawing.Point(397, 392);
             this.btnModifyParts.Name = "btnModifyParts";
             this.btnModifyParts.Size = new System.Drawing.Size(54, 23);
@@ -183,131 +173,36 @@ namespace C968_Joshua_Cowell
             // 
             // dataviewParts
             // 
+            this.dataviewParts.AllowUserToResizeColumns = false;
+            this.dataviewParts.AllowUserToResizeRows = false;
             this.dataviewParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataviewParts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnPartsPartId,
-            this.columnPartsName,
-            this.columnPartsInventory,
-            this.columnPartsPrice,
-            this.columnPartsMin,
-            this.columnPartsMax});
             this.dataviewParts.Location = new System.Drawing.Point(11, 110);
+            this.dataviewParts.MultiSelect = false;
             this.dataviewParts.Name = "dataviewParts";
+            this.dataviewParts.ReadOnly = true;
             this.dataviewParts.RowHeadersVisible = false;
             this.dataviewParts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataviewParts.Size = new System.Drawing.Size(500, 251);
             this.dataviewParts.TabIndex = 14;
+            this.dataviewParts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParts_CellClick);
             this.dataviewParts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // columnPartsPartId
-            // 
-            this.columnPartsPartId.Frozen = true;
-            this.columnPartsPartId.HeaderText = "Part ID";
-            this.columnPartsPartId.Name = "columnPartsPartId";
-            this.columnPartsPartId.ReadOnly = true;
-            // 
-            // columnPartsName
-            // 
-            this.columnPartsName.Frozen = true;
-            this.columnPartsName.HeaderText = "Name";
-            this.columnPartsName.Name = "columnPartsName";
-            this.columnPartsName.ReadOnly = true;
-            // 
-            // columnPartsInventory
-            // 
-            this.columnPartsInventory.Frozen = true;
-            this.columnPartsInventory.HeaderText = "Inventory";
-            this.columnPartsInventory.Name = "columnPartsInventory";
-            this.columnPartsInventory.ReadOnly = true;
-            // 
-            // columnPartsPrice
-            // 
-            this.columnPartsPrice.Frozen = true;
-            this.columnPartsPrice.HeaderText = "Price";
-            this.columnPartsPrice.Name = "columnPartsPrice";
-            this.columnPartsPrice.ReadOnly = true;
-            // 
-            // columnPartsMin
-            // 
-            this.columnPartsMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnPartsMin.Frozen = true;
-            this.columnPartsMin.HeaderText = "Min";
-            this.columnPartsMin.Name = "columnPartsMin";
-            this.columnPartsMin.ReadOnly = true;
-            this.columnPartsMin.Width = 49;
-            // 
-            // columnPartsMax
-            // 
-            this.columnPartsMax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnPartsMax.Frozen = true;
-            this.columnPartsMax.HeaderText = "Max";
-            this.columnPartsMax.Name = "columnPartsMax";
-            this.columnPartsMax.ReadOnly = true;
-            this.columnPartsMax.Width = 52;
             // 
             // dataviewProducts
             // 
+            this.dataviewProducts.AllowUserToAddRows = false;
+            this.dataviewProducts.AllowUserToDeleteRows = false;
+            this.dataviewProducts.AllowUserToResizeColumns = false;
+            this.dataviewProducts.AllowUserToResizeRows = false;
             this.dataviewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataviewProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnProductsProductID,
-            this.columnsProductsName,
-            this.columnProductsInventory,
-            this.columnProductsPrice,
-            this.columnProductsMin,
-            this.columnProductsMax});
             this.dataviewProducts.Location = new System.Drawing.Point(531, 110);
+            this.dataviewProducts.MultiSelect = false;
             this.dataviewProducts.Name = "dataviewProducts";
+            this.dataviewProducts.ReadOnly = true;
             this.dataviewProducts.RowHeadersVisible = false;
             this.dataviewProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataviewProducts.Size = new System.Drawing.Size(500, 251);
             this.dataviewProducts.TabIndex = 15;
             this.dataviewProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            // 
-            // columnProductsProductID
-            // 
-            this.columnProductsProductID.Frozen = true;
-            this.columnProductsProductID.HeaderText = "Product ID";
-            this.columnProductsProductID.Name = "columnProductsProductID";
-            this.columnProductsProductID.ReadOnly = true;
-            // 
-            // columnsProductsName
-            // 
-            this.columnsProductsName.Frozen = true;
-            this.columnsProductsName.HeaderText = "Name";
-            this.columnsProductsName.Name = "columnsProductsName";
-            this.columnsProductsName.ReadOnly = true;
-            // 
-            // columnProductsInventory
-            // 
-            this.columnProductsInventory.Frozen = true;
-            this.columnProductsInventory.HeaderText = "Inventory";
-            this.columnProductsInventory.Name = "columnProductsInventory";
-            this.columnProductsInventory.ReadOnly = true;
-            // 
-            // columnProductsPrice
-            // 
-            this.columnProductsPrice.Frozen = true;
-            this.columnProductsPrice.HeaderText = "Price";
-            this.columnProductsPrice.Name = "columnProductsPrice";
-            this.columnProductsPrice.ReadOnly = true;
-            // 
-            // columnProductsMin
-            // 
-            this.columnProductsMin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnProductsMin.Frozen = true;
-            this.columnProductsMin.HeaderText = "Min";
-            this.columnProductsMin.Name = "columnProductsMin";
-            this.columnProductsMin.ReadOnly = true;
-            this.columnProductsMin.Width = 49;
-            // 
-            // columnProductsMax
-            // 
-            this.columnProductsMax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.columnProductsMax.Frozen = true;
-            this.columnProductsMax.HeaderText = "Max";
-            this.columnProductsMax.Name = "columnProductsMax";
-            this.columnProductsMax.ReadOnly = true;
-            this.columnProductsMax.Width = 52;
             // 
             // lblMainTitle
             // 
@@ -329,6 +224,10 @@ namespace C968_Joshua_Cowell
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // inventoryBindingSource1
+            // 
+            this.inventoryBindingSource1.DataSource = typeof(C968_Joshua_Cowell.Inventory);
             // 
             // inventoryBindingSource
             // 
@@ -356,10 +255,11 @@ namespace C968_Joshua_Cowell
             this.Controls.Add(this.btnModifyParts);
             this.Controls.Add(this.btnAddParts);
             this.Name = "MainForm";
-            this.Text = "Inventory Management System";
+            this.Text = "Main Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataviewParts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -379,23 +279,12 @@ namespace C968_Joshua_Cowell
         private System.Windows.Forms.TextBox txtboxSearchProducts;
         private System.Windows.Forms.Button btnSearchParts;
         private System.Windows.Forms.Button btnSearchProducts;
-        private System.Windows.Forms.DataGridView dataviewParts;
-        private System.Windows.Forms.DataGridView dataviewProducts;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnProductsProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnsProductsName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnProductsInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnProductsPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnProductsMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnProductsMax;
+        public System.Windows.Forms.DataGridView dataviewParts;
+        public System.Windows.Forms.DataGridView dataviewProducts;
         private System.Windows.Forms.Label lblMainTitle;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPartsPartId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPartsName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPartsInventory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPartsPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPartsMin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnPartsMax;
         private System.Windows.Forms.BindingSource inventoryBindingSource;
+        private System.Windows.Forms.BindingSource inventoryBindingSource1;
     }
 }
 
