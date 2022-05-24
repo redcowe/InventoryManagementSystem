@@ -7,13 +7,13 @@ This project is a simple inventory management system that was part of my coursew
 <br />
 
 
-<h2>Language Used</h2>
+<h2>Language(s) Used</h2>
 
 - <b>C#</b> 
 
 <h2>Environments Used </h2>
 
-- <b>Windows 10</b> (21H2)
+- <b>Windows 10</b>
 
 <h2>Program walk-through:</h2>
 
