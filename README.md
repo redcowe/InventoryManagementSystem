@@ -16,7 +16,7 @@ Delete and Search functionalities are the exact same for both Products and Parts
 
 - <b>Windows 10</b>
 
-<h2>Program walk-through:</h2>
+<h2>Program Walk-Through:</h2>
 
 <p align="center">
 Program on Launch: <br/>
